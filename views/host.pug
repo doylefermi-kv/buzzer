@@ -4,15 +4,24 @@ html
     title=title
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel="stylesheet" href='/style.css')
+    style
+      |   body {
+      |     background-image: url('/kv_background.png');
+      |     background-repeat: no-repeat;
+      |     background-position: center center;
+      |     background-attachment: fixed;
+      |     background-size: cover;
+      |   }
   body
     header
-      img.logo(src='/buzzer-logo.svg')
+      img.logo(src='/logo.png')
 
     div.container
-      h2.js-active=`${users.length} joined`
+      h5.js-active=`${users.length} joined`
       ol.js-buzzes
         each buzz in buzzes
-          li=`${buzz.name} on Team ${buzz.team}`
+          h2.list-item
+            li=`${buzz.name} on Team ${buzz.team}`
       button.js-clear='Clear buzzes'
 
     script(src='/socket.io/socket.io.js')

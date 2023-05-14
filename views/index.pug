@@ -5,13 +5,21 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:500,700|Roboto:400,500,700,900")
     link(rel="stylesheet" href='/style.css')
+    //- style
+    //-   |   body {
+    //-   |     background-image: url('/kv_background.png');
+    //-   |     background-repeat: no-repeat;
+    //-   |     background-position: center center;
+    //-   |     background-attachment: fixed;
+    //-   |     background-size: cover;
+    //-   |   }
   body.js-body
     header
-      img.logo(src='/buzzer-logo.svg')
+      img.logo(src='/logo.png')
 
     div.container
       form.view.js-join
-        img(src="/lets-play.png" class="main-image")
+        //- img(src="/logo.png" class="main-image")
         h2="Let's play!"
         input(type='text' name='name' placeholder='Your name' required='required')
         input(type='number' name='team' placeholder='Your team number' required='required')
