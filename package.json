@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.14.1",
+    "play-sound": "^1.1.5",
     "pug": "2.0.0-beta11",
     "socketio": "1.0.0"
   }
