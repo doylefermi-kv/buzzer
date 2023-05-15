@@ -6,6 +6,9 @@ const app = express();
 const server = http.Server(app);
 const io = socketio(server);
 
+const player = require('play-sound')(opts = { player: 'mplayer' });
+const audioPath = './public/buzzer.mp3';
+
 const title = 'KV Quiz Buzz'
 
 const initData = () => ({
@@ -56,6 +59,15 @@ io.on('connection', (socket) => {
     }
 
     io.emit('buzzes', [...data.buzzes])
+
+    player.play(audioPath, function(err){
+      if (err) {
+        console.error('Error playing audio:', err);
+      } else {
+        console.log('Audio file played successfully.');
+      }
+    });
+
     console.log(`${latence} ${user.name} buzzed in! ${latence ? `(+ ${latence}ms)` : ''}`)
   })
 
